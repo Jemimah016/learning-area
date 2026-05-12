@@ -31,7 +31,27 @@
     </ul>
 
     <script>
-
+      const input = document.querySelector("form");
+      const input = documnet.querySelector("#item");
+      const list = document.querySelector("ul");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const itemText = input.value;
+        if (itemText === "") return;
+        input.value = "";
+        const li = document.createElement("li");
+        const span = document.createElement("span");
+        const button = document.createElement("button");
+        span.textContent = itemText;
+        button.textContent = "Delete";
+        li.appendChild(span);
+        li.appendChild(button);
+        list.appendChild(li);
+        button.addEventListener("click", function () {
+          li.remove();
+        } );
+        input.focus();
+      } );
     </script>
   </body>
 </html>
